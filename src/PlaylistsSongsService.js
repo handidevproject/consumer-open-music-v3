@@ -4,8 +4,8 @@ const config = require("./config"); // sesuaikan path
 class PlaylistsSongsService {
   constructor() {
       this._pool = new Pool(config.postgres);
-      console.log('Connected DB:', process.env.PGDATABASE, 'as', process.env.PGUSER);
-      console.log('Connected DB2:', config.postgres);
+      ///console.log('Connected DB:', process.env.PGDATABASE, 'as', process.env.PGUSER);
+      ///console.log('Connected DB2:', config.postgres);
   }
 
     async getSongsFromPlaylist(playlistId) {

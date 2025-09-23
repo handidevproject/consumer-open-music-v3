@@ -25,8 +25,4 @@ const config = {
     },
 };
 
-console.log("Loaded config postgres:", config.postgres);
-console.log("Loaded config app:", config.app);
-
-
 module.exports = config;

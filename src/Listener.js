@@ -18,7 +18,7 @@ class Listener {
                 JSON.stringify(playlists, null, 2),
                 `Export Playlist - ${playlists.name}`,
             )
-            console.log(result);
+            console.log('success send email');
         } catch (error) {
             console.error('Gagal memproses pesan:', error);
         }
