@@ -1,21 +1,22 @@
 const nodemailer = require('nodemailer');
+const config = require('./config'); // sesuaikan path
 
 class MailSender {
     constructor() {
         this._transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: process.env.SMTP_PORT,
+            host: config.nodeMailer.host,
+            port: config.nodeMailer.port,
             secure: false,
             auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASSWORD,
+                user: config.nodeMailer.user,
+                pass: config.nodeMailer.password,
             },
         });
     }
 
     async sendEmail(targetEmail, content, subject = 'Export Playlist') {
         const message = {
-            from: process.env.SMTP_USER,
+            user: config.nodeMailer.user,
             to: targetEmail,
             subject,
             text: 'Terlampir hasil dari ekspor playlist',
