@@ -1,8 +1,8 @@
 {
   "name": "consumer-open-music-v3",
   "version": "1.0.0",
-  "description": "",
-  "main": "playlistConsumer.js",
+  "description": "Consumer service for Open Music v3",
+  "main": "src/playlistConsumer.js",
   "scripts": {
     "start": "node ./src/playlistConsumer.js",
     "start:dev": "nodemon ./src/playlistConsumer.js",

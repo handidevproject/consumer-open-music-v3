@@ -9,8 +9,6 @@ class Listener {
         try {
             const { playlistId, targetEmail } = JSON.parse(message.content.toString());
 
-            console.log('Received message:', message.content.toString());
-
             // Ambil playlist lengkap dengan lagu
             const playlists = await this._playlistsSongsService.getSongsFromPlaylist(playlistId);
             await this._mailSender.sendEmail(
