@@ -6,10 +6,7 @@
   "scripts": {
     "start": "node ./src/playlistConsumer.js",
     "start:dev": "nodemon ./src/playlistConsumer.js",
-    "lint": "eslint ./src",
-    "migrate:up": "node-pg-migrate up -v",
-    "migrate:down": "node-pg-migrate down",
-    "migrate": "node-pg-migrate"
+    "lint": "eslint ./src --fix"
   },
   "private": true,
   "keywords": [],
@@ -17,7 +14,10 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "eslint": "^8.52.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.0"
   },
   "dependencies": {
     "@hapi/hapi": "^21.4.3",

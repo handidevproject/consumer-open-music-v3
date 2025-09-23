@@ -13,11 +13,11 @@ class Listener {
 
             // Ambil playlist lengkap dengan lagu
             const playlists = await this._playlistsSongsService.getSongsFromPlaylist(playlistId);
-            const result = await this._mailSender.sendEmail(
+            await this._mailSender.sendEmail(
                 targetEmail,
                 JSON.stringify(playlists, null, 2),
                 `Export Playlist - ${playlists.name}`,
-            )
+            );
             console.log('success send email');
         } catch (error) {
             console.error('Gagal memproses pesan:', error);

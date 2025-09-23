@@ -23,8 +23,8 @@ class MailSender {
                 {
                     filename: 'open-music.json',
                     content,
-                }
-            ]
+                },
+            ],
         };
         await this._transporter.sendMail(message);
     }
