@@ -18,7 +18,7 @@ class MailSender {
             from: process.env.SMTP_USER,
             to: targetEmail,
             subject,
-            text: 'Terlampir hasil dari ekspor catatan',
+            text: 'Terlampir hasil dari ekspor playlist',
             attachments: [
                 {
                     filename: 'open-music.json',

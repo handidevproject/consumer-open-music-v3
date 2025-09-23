@@ -9,19 +9,16 @@ class Listener {
         try {
             const { playlistId, targetEmail } = JSON.parse(message.content.toString());
 
+            console.log('Received message:', message.content.toString());
+
             // Ambil playlist lengkap dengan lagu
-            const playlist = await this._playlistsSongsService.getSongsFromPlaylist(playlistId);
-
-            const exported = { playlist };
-
-            // Kirim email
-            await this._mailSender.sendEmail(
+            const playlists = await this._playlistsSongsService.getSongsFromPlaylist(playlistId);
+            const result = await this._mailSender.sendEmail(
                 targetEmail,
-                JSON.stringify(exported, null, 2),
-                `Export Playlist - ${playlist.name}`,
-            );
-
-            console.log(`Email terkirim ke ${targetEmail}`);
+                JSON.stringify(playlists, null, 2),
+                `Export Playlist - ${playlists.name}`,
+            )
+            console.log(result);
         } catch (error) {
             console.error('Gagal memproses pesan:', error);
         }
