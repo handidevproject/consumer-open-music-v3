@@ -26,7 +26,7 @@ const config = {
     nodeMailer: {
         user: process.env.SMTP_USER,
         host: process.env.SMTP_HOST,
-        password: process.env.PGPASSWORD,
+        password: process.env.SMTP_PASSWORD,
         port: process.env.SMTP_PORT,
     }
 };
