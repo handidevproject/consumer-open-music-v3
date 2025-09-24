@@ -10,10 +10,15 @@ class Listener {
             const { playlistId, targetEmail } = JSON.parse(message.content.toString());
 
             // Ambil playlist lengkap dengan lagu
-            const playlists = await this._playlistsSongsService.getSongsFromPlaylist(playlistId);
+            const playlist = await this._playlistsSongsService.getSongsFromPlaylist(playlistId);
+
+            const result = {
+                playlist,
+            };
+
             await this._mailSender.sendEmail(
                 targetEmail,
-                JSON.stringify(playlists, null, 2),
+                JSON.stringify(result, null, 2),
                 `Export Playlist - ${playlists.name}`,
             );
             console.log('success send email');
